@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "declaration": false,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictFunctionTypes": true,
+    "noUnusedParameters": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es5",
+    "noEmit": true,
+    "lib": [
+      "es5",
+      "es2015"
+    ]
+  },
+  "formatCodeOptions": {
+    "indentSize": 2,
+    "tabSize": 2
+  }
+}

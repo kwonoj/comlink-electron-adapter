@@ -1,0 +1,19 @@
+environment:
+  matrix:
+    - nodejs_version: "12"
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - set PATH=%APPDATA%\npm;%PATH%
+  - npm install -g npm@latest
+  - node -v && npm -v
+  - npm install
+
+build_script:
+  - npm run lint
+  - npm run build
+
+test_script:
+  - npm test
+
+version: "{build}"

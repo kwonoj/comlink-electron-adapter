@@ -5,9 +5,26 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm-run-all build test"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write --single-quote --print-width 120 --jsx-bracket-same-line true",
+      "tslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
-    "lint": "echo",
-    "build": "echo",
+    "prepublishOnly": "npm-run-all build:clean build test",
+    "lint": "tslint -c tslint.json -p tsconfig.json \"src/**/*.ts\" \"spec/**/*.ts\"",
+    "lint:staged": "lint-staged",
+    "build": "tsc -b --verbose ./src/tsconfig.cjs.json ./src/tsconfig.esm.json ./src/tsconfig.types.json ./spec/tsconfig.json",
+    "build:clean": "shx rm -rf ./dist",
     "test": "echo"
   },
   "repository": {
@@ -20,5 +37,21 @@
   "bugs": {
     "url": "https://github.com/kwonoj/comlink-electron-adapter/issues"
   },
-  "homepage": "https://github.com/kwonoj/comlink-electron-adapter#readme"
+  "homepage": "https://github.com/kwonoj/comlink-electron-adapter#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-angular": "^7.6.0",
+    "@types/node": "^12.0.2",
+    "conventional-changelog-cli": "^2.0.21",
+    "dependency-cruiser": "^4.19.1",
+    "electron": "^5.0.2",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.17.1",
+    "shx": "^0.3.2",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
 }

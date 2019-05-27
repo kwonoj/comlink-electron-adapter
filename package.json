@@ -9,7 +9,7 @@
     "hooks": {
       "commit-msg": "commitlint -e",
       "pre-commit": "lint-staged",
-      "pre-push": "npm-run-all lint:* prepare test:unit"
+      "pre-push": "npm-run-all build test"
     }
   },
   "lint-staged": {
@@ -19,8 +19,11 @@
     ]
   },
   "scripts": {
+    "prepublishOnly": "npm-run-all build:clean build test",
     "lint": "echo",
-    "build": "echo",
+    "lint:staged": "lint-staged",
+    "build": "tsc -b --verbose ./src/tsconfig.cjs.json ./src/tsconfig.esm.json ./src/tsconfig.types.json ./spec/tsconfig.json",
+    "build:clean": "shx rm -rf ./dist",
     "test": "echo"
   },
   "repository": {

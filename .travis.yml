@@ -7,7 +7,7 @@ cache:
 
 env:
   matrix:
-  - NODE_VER=12 FULL_VALIDATE=true
+  - NODE_VER=11 FULL_VALIDATE=true
 
 matrix:
   fast_finish: true

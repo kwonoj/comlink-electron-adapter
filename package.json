@@ -6,9 +6,9 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "lint": "",
-    "build": "",
-    "test": ""
+    "lint": "echo",
+    "build": "echo",
+    "test": "echo"
   },
   "repository": {
     "type": "git",

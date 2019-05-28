@@ -25,3 +25,4 @@ karma.conf.*
 .tmp
 .nyc_output
 .dependency-cruiser.json
+*.tsbuildinfo

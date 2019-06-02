@@ -6,7 +6,7 @@
 
 # Comlink-electron-adapter
 
-[Comlink](https://github.com/GoogleChromeLabs/comlink) provides way to interface between worker-like endpoint via ES proxy. This module provides custom endpoints around Electron's IPC (https://electronjs.org/docs/api/ipc-main), allow to create proxy across Electron's processes.
+[Comlink](https://github.com/GoogleChromeLabs/comlink) provides way to interface between worker-like endpoint via ES proxy. This module allows to create custom endpoints around Electron's IPC (https://electronjs.org/docs/api/ipc-main) for proxy object across Electron's processes.
 
 # Install
 
@@ -22,7 +22,7 @@ There are separate endpoint creation method per object's origin.
 
 ## Expose main process's object to renderer project
 
-```
+```ts
 // main process
 import { ipcMain } from 'electron';
 import { expose } from 'comlink';
@@ -43,7 +43,7 @@ const proxied = wrap(mainProcObjectEndpoint(ipcRenderer));
 
 It is also possible to access renderer process's object in main process.
 
-```
+```ts
 // renderer process
 import { expose } from 'comlink';
 import { ipcRenderer } from 'electron';

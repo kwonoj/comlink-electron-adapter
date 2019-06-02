@@ -1,7 +1,7 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../src/tsconfig.cjs.json",
   "compilerOptions": {
-    "skipLibCheck": true
+    "noEmit": true
   },
   "references": [
     {

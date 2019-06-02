@@ -1,8 +1,7 @@
 {
-  "extends": "./tsconfig.esm.json",
+  "extends": "./tsconfig.cjs.json",
   "compilerOptions": {
     "module": "es2015",
-    "target": "esnext",
     "declaration": true,
     "declarationDir": "../dist/types",
     "declarationMap": true,

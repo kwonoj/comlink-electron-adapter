@@ -14,12 +14,12 @@
     "noUnusedParameters": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es5",
+    "target": "es2018",
     "noEmit": true,
     "lib": [
       "es5",
-      "es2015"
+      "es2015",
+      "dom"
     ]
   },
   "formatCodeOptions": {

@@ -25,7 +25,8 @@
     "lint:staged": "lint-staged",
     "build": "tsc -b --verbose ./src/tsconfig.cjs.json ./src/tsconfig.esm.json ./src/tsconfig.types.json ./spec/tsconfig.json",
     "build:clean": "shx rm -rf ./dist",
-    "test": "jest --config jest.json --coverage"
+    "test": "jest --config jest.json --coverage",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "repository": {
     "type": "git",

@@ -57,7 +57,7 @@ const createEndpoint = (endpoint: IpcMain | IpcRenderer, channelPostfix: string 
         if (target) {
           target.send(getChannel(), message);
         } else {
-          webContentesSenders.shift()!.reply(getChannel(), message); // If we don't have sender it means something went wrong
+          webContentesSenders.shift()!.sender.webContents.send(getChannel(), message); // If we don't have sender it means something went wrong
         }
       };
 
